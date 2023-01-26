@@ -1,0 +1,18 @@
+[package]
+name = "guessing_game"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "guessing_game"
+crate-type = ["cdylib"]
+
+[dependencies]
+rand = "0.8.4"
+
+[dependencies.pyo3]
+version = "0.18.0"
+# "extension-module" tells pyo3 we want to build an extension module (skips linking against libpython.so)
+# "abi3-py37" tells pyo3 (and maturin) to build using the stable ABI with minimum Python verions 3.7
+features = ["extension-module", "abi3-py37"]
